@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EliteFinance Quant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+</head>
+<body>
+    <!-- 第一部分：视频背景 -->
+    <div class="video-container">
+        <video  id="video-background"autoplay 
+                loop 
+                muted 
+                playsinline 
+                webkit-playsinline 
+                x5-playsinline 
+                x5-video-player-type="h5" 
+                x5-video-player-fullscreen="true">
+            <source src="/images/bk_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img id="gif-background" src="/images/bkgif.gif" alt="GIF Background" style="display: none;">
+        
+        <div class="img-logo">
+          <img src="/images/Studio-Project.png"  class="vector-image">
+        </div>
+        <script src="script.js"></script>
+        
+        <div class="video-text">
+          
+          <div class="component"><p1>AI+CTA量化</p1></div>
+          <div class="component"><p2>Smart Actions, Smarter Conversions</p2></div>
+          <div class="component"><button type="button">了解更多</button></div>
+
+        </div>
+        
+    </div>
+
+    <!-- 第二部分：常见问题解答 -->
+    <div class="section faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="section-content-container">
+              <div class="section-content">
+                <div class="faq-item" >
+                    
+                    <div class="faq-item-headbutton">
+                      <h3>什么是CTA策略?</h3>
+                      <button type="button" onclick="toggleAnswer(1)" class="arrow-button"></button>
+                    </div>
+                    <p id="faq-answer-1" class="faq-answer">CTA策略（Commodity Trading Advisor Strategy，大宗商品交易顾问策略）是一种专业的投资策略，主要通过交易期货、期权等衍生品来获取绝对收益。<br>
+                      <br><br>CTA策略的特点：<br>
+                      <br>1.绝对收益：CTA策略的目标是获取绝对收益，而不是相对于某个基准指数的表现，这意味着即使在整体市场下跌的情况下，CTA策略也能够实现盈利。
+                      <br>2.低相关性：与股票、债券等传统资产具有较低的相关性，有助于投资组合的分散化和降低整体风险。
+                      <br>3.杠杆效应：利用期货市场的杠杆效应，以相对较少的资金控制更大规模的资产，从而放大投资回报。
+                      <br>4.高流动性：期货市场具有较高的流动性，CTA策略可以进行灵活交易，更容易实现资金的进出。
+                      <br>5.策略多样化：涵盖趋势跟踪、基本面分析、套利交易等多种策略类型，投资者可以根据自身需求和市场环境选择适合的策略。。</p>
+                </div>
+                <div class="faq-item" >
+                    
+                    <div class="faq-item-headbutton">
+                      <h3>我们的使命和愿景</h3>
+                      <button type="button" onclick="toggleAnswer(2)" class="arrow-button"></button>
+                    </div>
+                    <p id="faq-answer-2" class="faq-answer">我们致力于 CTA（Commodity Trading Advisor Strategy, 大宗商品交易顾问）策略的深度创新，以数据为基础，结合人工智能（Artificial Intelligence，AI），不断发掘当前市场的机会，让所有投资机会在数据上得到印证，提高投资决策的科学性，为客户提供优质、独到的量化咨询。我们希望每个交易者通过量化策略，消除自身交易中的不确定性。</p>
+                </div>
+                <div class="faq-item" >
+                    
+                    <div class="faq-item-headbutton">
+                      <h3>我们如何工作？</h3>
+                      <button type="button" onclick="toggleAnswer(3)" class="arrow-button"></button>
+                    </div>
+                    <p id="faq-answer-3" class="faq-answer">我们的日常工作基于人类和AI的深度融合：<br>
+                      <br>1.提出一个idea，交给AI助手分析；
+                      <br>2.AI助手扫描金融市场数据，根据idea解构市场；
+                      <br>3.重构分解出的逻辑，成为完整立体的策略；
+                      <br>4.团队讨论复核，确定最后的策略。
+                      <br><br>每年，无数个这样的策略，为我们带来了持续优质的交易成果。</p>
+                </div>
+                <div class="faq-item" >
+                    
+                    <div class="faq-item-headbutton">
+                      <h3>什么是EF量化的主要服务？</h3>
+                      <button type="button" onclick="toggleAnswer(4)" class="arrow-button"></button>
+                    </div>
+
+                    <p id="faq-answer-4" class="faq-answer">我们提供量化投资领域的咨询、研发和技术支持服务。</p>
+                </div>
+                <div class="faq-item" >
+                    
+                    <div class="faq-item-headbutton">
+                      <h3>我们的团队介绍</h3>
+                      <button type="button" onclick="toggleAnswer(5)" class="arrow-button"></button>
+                    </div>
+
+
+                    <p id="faq-answer-5" class="faq-answer">我们的团队均毕业于世界名校，拥有多年量化投资经验，曾管理上亿规模资产，投资业绩稳健，同时我们开发调试了自己的AI助手，是我们团队的强力辅助。
+                      <br><br>核心成员：
+                      <br>Yui GUO : founder - managing director<br>
+                      <br>Benjamin ZHOU : co-founder - operation director<br>
+                      <br>Leo ZHANG  :  co-founder - finance director <br>
+                      <br>
+                      <br>AI成员：
+                      <br>Starfield ：是我们的1号AI成员，负责探索挖掘市场中可能存在的机会，寻找idea。<br>
+                      <br>Polaris ：是我们的2号AI成员，负责融合idea和市场数据，包括设计统计方案、生成分析报告等。<br></p>
+                </div>
+                <div class="faq-item" >
+                  <div class="faq-item-headbutton">
+                    <h3>我可以在哪里找到EF量化的成果？</h3>
+                    <button type="button" onclick="toggleAnswer(6)" class="arrow-button"></button>
+                  </div>
+                  
+                  <div id="faq-answer-6" class="faq-answer">
+                    <p >您可以通过关注我们团队的 微信公众号：EF量化交易（微信号: EF_PropTrading）看到我们最新的研究报告，或点击以下链接查看到我们的交易成果。
+                    </p>
+                    <ul>
+                      <li><a href="index-overview.html">成果展示</a></li>
+                      
+                    </ul>
+
+
+                  </div>
+                  
+                
+                  
+                </div>
+              </div>
+              
+        </div>
+    </div>
+
+    
+    <!-- 第三部分：联系我们 -->
+    <div class="section contact-section">
+      <div class="section-container">
+        <div class="section-header">
+              <h2>联系我们</h2>
+        </div>
+          
+        <div class="section-content">
+          <div class="contact-section2">
+            <div class="contact-description">
+              <h3>与我们联系 !</h3>
+            </div>
+                <form id="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="名称" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="电子邮件*" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="邮件" required  rows="8"></textarea>
+                    </div>
+
+                    <div class="form-group-button">
+
+                        <button type="submit" onclick="sendEmail()">发送</button>
+                    </div>
+                </form>
+                <div class="contact-description">
+                  <h3>欢迎联系我们面谈 !</h3>
+                      <p>我们以客户为中心，欢迎在工作时间随时来拜访我们。</p>
+                </div>
+
+                <div class="contact-info">
+                  <div class="contact-info-item">
+                      <h3>EF量化</h3>
+                      <p>Address: 3th Floor, Block 1 ,1 Zhongxin 4th Road, Futian, Shenzhen, Guangdong, China</p>
+                      <p>Email: admin@elitewealthwise.com.au </p>
+                      <p>微信公众号：EF量化交易<br> 微信号：EF_PropTrading</p>
+
+                  </div>
+
+                  <div class="contact-info-item">
+                    <h3>时间</h3>
+                    <p>周一 上午09:00 – 下午05:00</p>
+                    <p>周二 上午09:00 – 下午05:00</p>
+                    <p>周三 上午09:00 – 下午05:00</p>
+                    <p>周四 上午09:00 – 下午05:00</p>
+                    <p>周五 上午09:00 – 下午05:00</p>
+                    <p>周六 不营业</p>
+                    <p>周天 不营业</p>
+
+                  </div>
+
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第四部分：技术支持展示窗口 -->
+    <div class="section support-section">
+      <div class="section-container">
+        
+          <h2>我们的技术支持</h2>
+      
+      <div class="section-content">
+          <div class="logo-slider">
+              <div class="logo-slide"><img src="/images/s1.jpg" alt="Logo 1"></div>
+              <div class="logo-slide"><img src="/images/s2.jpg" alt="Logo 2"></div>
+              <div class="logo-slide"><img src="/images/s3.jpg" alt="Logo 3"></div>
+              <div class="logo-slide"><img src="/images/s4.jpg" alt="Logo 4"></div>
+              <div class="logo-slide"><img src="/images/s5.jpg" alt="Logo 5"></div>
+              <div class="logo-slide"><img src="/images/s6.jpg" alt="Logo 6"></div>
+              <div class="logo-slide"><img src="/images/s7.jpg" alt="Logo 7"></div>
+              <!-- 复制图片以实现无缝滚动 -->
+              
+            </div>
+          
+      </div>
+
+
+              
+          
+      </div>
+      </div>
+          
+    </div>
+
+    <!-- 第五部分：隐私政策 -->
+    <div class="section privacy-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>隐私政策</h2>
+      </div>
+      <div class="section-content">
+          <p>我们尊重您的隐私。您的个人信息将仅用于提供服务和沟通。我们不会将您的信息泄露给第三方。</p>
+      </div>
+      <div class="section-content">
+        <p>版权© 2025 EF量化 - All rights reserved.</p>
+    </div>
+      </div>
+      
+        
+    </div>
+
+    <!-- 第六部分：版权信息 -->
+    <script>
+      function toggleAnswer(index) {
+          const answer = document.getElementById(`faq-answer-${index}`);
+          if (answer.style.display === "none") {
+              answer.style.display = "block";
+          } else {
+              answer.style.display = "none";
+          }
+      }
+  </script>
+  
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('video-background');
+    const gif = document.getElementById('gif-background');
+
+    function checkScreenSize() {
+        if (window.innerWidth <= 768) {
+            video.style.display = 'none';
+            gif.style.display = 'block';
+        } else {
+            video.style.display = 'block';
+            gif.style.display = 'none';
+        }
+    }
+
+    // 检查屏幕尺寸并相应地调整背景
+    checkScreenSize();
+
+    // 监听窗口大小变化事件
+    window.addEventListener('resize', checkScreenSize);
+});
+  </script>
+  <script>
+    function sendEmail() {
+            // 获取表单数据
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // 构造邮件内容
+            var subject = "来自：" + name; // 邮件主题
+            var body = "\n收件人: admin@elitewealthwise.com.au\n=======================\n\n"+"发件人 姓名：" + name + "\n邮箱：" + email + "\n内容：" + message; // 邮件内容
+
+            // 使用mailto链接发送邮件
+            var mailtoLink = "mailto:admin@elitewealthwise.com.au?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            window.location.href = mailtoLink;
+        }
+</script>
+</body>
+</html>
