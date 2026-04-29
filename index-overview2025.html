@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EliteFinance Quant Portfolio Overview</title>
+    <link rel="stylesheet" href="styles-overview.css">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+</head>
+<body>
+    <!-- 第一部分：视频背景 -->
+    <div class="video-container">
+        <video  id="video-background"autoplay 
+                loop 
+                muted 
+                playsinline 
+                webkit-playsinline 
+                x5-playsinline 
+                x5-video-player-type="h5" 
+                x5-video-player-fullscreen="true">
+            <source src="/images/bk_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img id="gif-background" src="/images/bkgif.gif" alt="GIF Background" style="display: none;">
+        
+        <div class="img-logo">
+          <img src="/images/Studio-Project.png"  class="vector-image">
+        </div>
+        <script src="script.js"></script>
+        
+        <div class="overview-container">
+            <div class="overview-header">
+                <h2>Overview Dashboard</h2>
+            </div>
+
+            <div class="overview-panel">
+                
+                <div class="left-panel">
+                    <div class="chart-container">
+                        <canvas id="combinedChart"></canvas>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <div class="medium-stats">
+                        <div class="large-number" id="totalReturn">+113.32%</div>
+                        <div class="small-description">成立以来收益(2.2年)</div>
+                        <div class="large-number" id="yearReturn">+31.38%</div>
+                        <div class="small-description">今年来收益</div>
+                        <div class="large-number" id="monthlyReturn">+9.97%</div>
+                        <div class="small-description">当月收益</div>
+                        <div class="large-number" id="annualReturn">+38.36%</div>
+                        <div class="small-description">年化收益</div>
+                    </div>
+                    
+                    <div class="medium-stats">
+                        <div class="stat-item">
+                            <span>时间段：2023-01-01 - 2025-03-29</span>
+                            <span>本年起始累计收益：81.94%</span>
+                            <span>截至当前收益：113.32%</span>
+                            <span>变化值：+31.38%</span>
+                            <span>夏普比率：2.73</span>
+                            <span>最大回撤：9.22%</span>
+                            <span>标准差：5.70%</span>
+                        </div>
+                        <div class="stat-item2">
+                            <span>更新时间：2025-03-30</span>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+        
+
+            </div>
+
+
+        </div>
+            
+
+        <div class="privacy-container">
+            <div class="section-header">
+              <h2>关于</h2>
+            </div>
+            <div class="section-content-container">
+                <div class="section-content">
+                    <p>以上数据解释权归EF量化团队所有。</p>
+                    
+                    <p>官网: www.elitewealthwise.com.au</p>
+                    
+                    <p>版权© 2025 EF量化 - All rights reserved.</p>
+                </div>
+            </div>
+            
+        </div>
+          
+    </div>
+
+
+
+  
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('video-background');
+    const gif = document.getElementById('gif-background');
+
+    function checkScreenSize() {
+        if (window.innerWidth <= 768) {
+            video.style.display = 'none';
+            gif.style.display = 'block';
+        } else {
+            video.style.display = 'block';
+            gif.style.display = 'none';
+        }
+    }
+
+    // 检查屏幕尺寸并相应地调整背景
+    checkScreenSize();
+
+    // 监听窗口大小变化事件
+    window.addEventListener('resize', checkScreenSize);
+});
+  </script>
+  <script src="https://cdn.staticfile.net/Chart.js/3.9.1/chart.js"></script>
+  <script>
+      // 读取CSV文件并解析数据
+      async function fetchData() {
+          const response = await fetch('./data.csv');
+          const text = await response.text();
+          const rows = text.split('\n').map(row => row.split(','));
+          const labels = rows.map(row => row[0]); // 时间
+          const data = rows.map(row => parseFloat(row[1])); // 收益率
+          return { labels, data };
+      }
+
+      // 绘制图表
+      async function drawChart() {
+          const { labels, data } = await fetchData();
+          const ctx = document.getElementById('combinedChart').getContext('2d');
+          new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: labels,
+                  datasets: [
+                      {
+                          label: '累计收益率%',
+                          data: data,
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 2,
+                          fill: false,
+                          pointRadius: 3,
+                          
+                      },
+                      {
+                          type: 'bar',
+                          label: '累计收益率%柱状图',
+                          data: data,
+                          backgroundColor: 'rgba(255,165,1)',
+                          borderColor: 'rgba(255,165,0.5)',
+                          borderWidth: 1,
+                      }
+                  ]
+              },
+              options: {
+                  responsive: true, // 启用响应式
+                  maintainAspectRatio: false, // 禁用固定宽高比
+                  scales: {
+                      x: {
+                          title: {
+                              display: true,
+                              text: '时间',
+                              color: 'rgba(255,255,255)', // X轴刻度颜色
+                          },
+                          ticks: {
+                            color: 'rgba(255,255,255)', // X轴刻度颜色
+                        },
+                      },
+                      y: {
+                          title: {
+                              display: true,
+                              text: '累计收益率%',
+                              color: 'rgba(255,255,255)', // X轴刻度颜色
+                          },
+                          ticks: {
+                            color: 'rgba(255,255,255)', // X轴刻度颜色
+                        },
+                      }
+                  },
+                  plugins: {
+                      legend: {
+                          display: true,
+                          color: 'rgba(255,255,255)', // 
+                          labels:{
+                            color: 'rgba(255,255,255)', // 
+                          }
+
+                      }
+                  }
+              }
+          });
+      }
+
+      // 调整收益颜色
+      function updateColors() {
+          const totalReturn = document.getElementById('totalReturn');
+          const yearReturn = document.getElementById('yearReturn');
+          const monthlyReturn = document.getElementById('monthlyReturn');
+
+          const returns = [totalReturn, yearReturn, monthlyReturn];
+          returns.forEach(item => {
+              const value = parseFloat(item.textContent);
+              item.style.color = value >= 0 ? 'rgb(5, 236, 5)' : 'red';
+          });
+      }
+
+      // 初始化图表和颜色
+      drawChart();
+      updateColors();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+body {
+    font-family:  Arial, sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    background-size: cover; /* 确保背景图覆盖整个区域 */
+    background-position: center; /* 背景图居中 */
+    background-repeat: no-repeat; /* 背景图不重复 */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* 设置背景容器的堆叠顺序 */
+}
+
+
+ #gif-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 将视频和GIF设置在底层 */
+
+}
+
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 将视频和GIF设置在底层 */
+
+}
+
+@media (max-width: 768px) {
+    .video-background {
+        display: none;
+    }
+    
+    .gif-background {
+        height: 100vh; /* 在小屏幕上，视频高度可以减小 */
+        display: block;
+    }
+   
+}
+
+.vector-image {
+    position: absolute; /* 绝对定位 */
+    margin: 2% 15% 0;
+    width: 200px; /* 图片宽度 */
+    height: 60px; /* 图片高度 */
+    z-index: 1; /* 设置内容的堆叠顺序 */
+    
+}
+
+
+
+.section {
+    padding: 2%;
+}
+
+
+
+.section-header {
+    text-align: center;
+    border-bottom: 1px solid #919191;
+    color: #e2e2e2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8em;
+}
+
+.section-content-container{
+    margin: 0% 0px 0px 0%;
+    padding: 0%; /* 添加左右内边距 */
+    justify-content: center;
+    align-content: center;
+    
+}
+.section-content {
+    margin: 0% 0px 0px 0%;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.section-content p {
+    
+    line-height: 2; /* 设置行距为字体大小的 1.5 倍 */
+    margin: 0; /* 可选：移除默认的外边距 */
+    
+}
+.overview-header{
+    text-align: center;
+    border-bottom: 1px solid #919191;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    color: #e2e2e2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25em;
+}
+
+
+
+
+.overview-container{
+    margin: auto 12.5%; /* 水平居中 */
+    position: absolute; /* 绝对定位 */
+    padding: 3% 2.5%;
+    width: 75%; /* 根据需要设置宽度 */
+}
+
+.overview-panel{
+    margin-top: 1.5%;
+    color: white;
+    display: flex;
+    flex-direction: row; /* 按行从上到下排列 */
+    position: relative;
+    width: 100%;
+    
+    z-index: 1; /* 设置内容的堆叠顺序 */
+}
+
+
+
+.left-panel {
+    width:100%;
+    padding: 1.0% 0;
+    
+    
+}
+.right-panel {
+    width: 40%;
+}
+.large-number {
+    font-size: 1.8em;
+    color: rgb(5, 236, 5); /* 默认绿色，根据收益正负调整 */
+}
+.small-description {
+    font-size: 0.5em;
+    color: #919191;
+}
+.medium-stats {
+    
+    display: flex;
+    flex-direction: column; /* 按行从上到下排列 */
+    
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#e2e2e2;
+    padding: 1.5% 0;
+}
+.stat-item2 {
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#e2e2e2;
+    padding: 2.5% 0;
+}
+.stat-item span {
+    display: inline-block;
+    padding: 1.5% 0;
+}
+.chart-container {
+    width: 100%;
+    height: 100%;
+}
+
+
+.privacy-container{
+    margin: auto 12.5%; /* 水平居中 */
+    padding: 0% 2.5%;
+    width: 75%; /* 根据需要设置宽度 */
+    position: absolute; /* 绝对定位 */
+    bottom: 0; /* 底部对齐 */
+    font-size: 0.75em;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    .overview-container{
+    margin: auto 12.5%; /* 水平居中 */
+    position: relative; /* 绝对定位 */
+    flex-direction: column; /* 按行从上到下排列 */
+    padding: 15% 2.5%;
+    width: 75%; /* 根据需要设置宽度 */
+    height: auto; /* 确保父容器有明确的高度 */
+    z-index: 1; /* 设置内容的堆叠顺序 */
+    
+    }
+    .overview-header{
+        text-align: center;
+        border-bottom: 1px solid #919191;
+        margin-bottom: 0%;
+        padding-bottom: 0%;
+        color: #e2e2e2;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 0.75em;
+    }
+    .overview-panel{
+        color: white;
+        flex: flex;
+        flex-direction: column; /* 按行从上到下排列 */
+        z-index: 1; /* 设置内容的堆叠顺序 */
+        
+        }
+    .left-panel, .right-panel {
+        
+        
+        width:100%;
+    }
+    
+    .left-panel {
+        width:100%;
+        height: 200%;
+        
+        
+    }
+    
+    .right-panel {
+        width: 100%;
+        height:100%;
+        
+        font-size:0.8em;
+        display: flex; /* 使用 Flexbox 布局 */
+        flex-direction: row; /* 按行从上到下排列 */
+        gap: 10%; /* 子元素之间的间距 */
+    }
+    .medium-stats {
+        padding:15%,0;
+        display: flex;
+        flex-direction: column; /* 按行从上到下排列 */
+        justify-content: space-between;
+    
+    }
+    
+ 
+    .chart-container {
+    width: 100%;
+    height: 42.5vh;
+}
+   
+.privacy-container{
+    font-size: 0.8em;
+}
+}   
+
+
+
+
+
+

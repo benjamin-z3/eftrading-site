@@ -1,0 +1,389 @@
+body {
+    font-family:  Arial, sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    background-size: cover; /* 确保背景图覆盖整个区域 */
+    background-position: center; /* 背景图居中 */
+    background-repeat: no-repeat; /* 背景图不重复 */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* 设置背景容器的堆叠顺序 */
+}
+
+
+ #gif-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 将视频和GIF设置在底层 */
+
+}
+
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 将视频和GIF设置在底层 */
+
+}
+.video-text {
+    display: flex;
+    flex-direction: column; /* 按行从上到下排列 */
+    position: absolute;
+    bottom: 20%;
+    color: #e2e2e2;
+    
+    margin: 20% 14% 0;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #e2e2e2; /* 添加左侧白色边框 */
+    padding-left: 20px; /* 添加左侧内边距，使内容与边框之间有间隔 */
+    z-index: 1; /* 设置内容的堆叠顺序 */
+}
+@media (max-width: 768px) {
+    .video-background {
+        display: none;
+    }
+    
+    .gif-background {
+        height: 100vh; /* 在小屏幕上，视频高度可以减小 */
+        display: block;
+    }
+    .video-text {bottom: 12.5%;
+        margin: 2% 12.5% 0;}
+        .video-text p1{
+            font-size: 80%;
+            font-weight: bold;
+        }
+        .video-text p2{
+            font-size: 20%;
+            font-weight: normal;
+        }
+}
+
+.vector-image {
+    position: absolute; /* 绝对定位 */
+    margin: 2% 14% 0;
+    width: 200px; /* 图片宽度 */
+    height: 60px; /* 图片高度 */
+    z-index: 1; /* 设置内容的堆叠顺序 */
+    
+}
+
+.video-text p1{
+    font-size: 200%;
+    font-weight: bold;
+}
+.video-text p2{
+    font-size: 100%;
+    font-weight: normal;
+}
+.video-text .component {
+    margin-bottom: 16px; /* 设置每个组件的下外边距 */
+}
+
+.video-text .component:last-child {
+    margin-bottom: 0; /* 最后一个组件不需要下外边距 */
+}
+
+.video-text button {
+    text-align:center;
+    padding: 20px ;
+    background-color: #e2e2e2;
+    color: black;
+    border: #e2e2e2;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 50%;
+    transition: background-color 0.3s ease; /* 平滑过渡效果 */
+    font-weight: bold;
+    
+}
+
+.video-text button:hover {
+    background-color:transparent;
+    color: white;
+    border: 2px solid white; /* 鼠标移动上去后出现白色边框 */
+    border-radius: 2.5px;
+}
+
+.section {
+    padding: 2%;
+}
+
+.section-container {
+    margin: 0 12.5%;
+    padding: 0 2.5%; /* 添加左右内边距 */
+    justify-content: center;
+    align-content: center;
+}
+ 
+.section-header {
+    text-align: left;
+    margin-bottom: 2.5%;
+    border-bottom: 1px solid #919191;
+    padding-bottom: 1%;
+    color: #e2e2e2;
+    font-family: 'Times New Roman', Times, serif;
+}
+.section-content-container{
+    margin: 0px 0px 0px 7.5%;
+    padding: 5%; /* 添加左右内边距 */
+    justify-content: center;
+    align-content: center;
+    
+}
+.section-content {
+    text-align:left;
+    display: flex;
+    flex-direction: column;
+    
+}
+@media (max-width: 768px) {
+    .section-container {
+        margin: 0 0%;
+        padding: 0 2.5%; /* 添加左右内边距 */
+        justify-content: left;
+        align-content: left;
+    }
+    .section-content-container{
+    margin: 0px 0px 0px 5%;
+    padding: 5%; /* 添加左右内边距 */
+    justify-content: left;
+    align-content: left;
+    
+    }
+}  
+.faq-item {
+    margin-bottom: 2.5%;
+    width: 100%;
+    border-bottom: 1px solid #1a1a1a;
+    cursor: pointer;
+    
+}
+
+
+.faq-item-headbutton {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 10px; /* 添加一些内边距 */
+}
+
+.faq-item-headbutton h3 {
+    margin: 0; /* 移除默认的 h3 外边距 */
+}
+
+.faq-item-headbutton button {
+    margin: 0; /* 移除默认的 button 外边距 */
+    padding: 5px 10px; /* 添加一些内边距 */
+    background-color: black; /* 按钮背景颜色 */
+    color: white; /* 按钮文字颜色 */
+    border: none; /* 移除按钮边框 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+
+.arrow-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative; /* 为伪元素定位 */
+}
+
+.arrow-button::after {
+    content: ">";
+    font-size: 24px; /* 箭头大小 */
+    color: white; /* 箭头颜色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 水平和垂直居中 */
+}
+
+
+
+
+.faq-answer {
+    display: none;
+    margin-top: 2.5%;
+}
+.faq-item h3 {
+    font-size:25px;
+    margin-bottom: 2.5%;
+    color: #e2e2e2;
+    font-weight:normal; /* 设置为正常粗细 */
+    
+}
+
+.faq-item p {
+    font-size:20px;
+    color: #919191;
+}
+
+.contact-section h2,
+.support-section h2,
+.privacy-section h2,
+.copyright-section h2 {
+    color: #e2e2e2;
+}
+.support-section h2{
+    text-align: center;
+    font-weight:normal; /* 设置为正常粗细 */
+    font-size:30px;
+}
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:100%;
+}
+
+.contact-section .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.contact-section .form-group-button {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin-bottom: 5%;
+}
+.contact-section label {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #919191;
+}
+
+.contact-section input, .contact-section textarea {
+    font-size: 16px;
+    width: 100%;
+    padding: 2.5%;
+    border: 1px solid #919191;
+    border-radius: 2.5px;
+    background-color: black;
+    color: #e2e2e2;
+    
+    
+}
+
+.contact-section button {
+    text-align:center;
+    padding: 7.5% ;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 2.5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.contact-section button:hover {
+    background-color: #919191;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    
+    text-align: center;
+    width:100%;
+    
+}
+.contact-info-item{
+    flex:1;
+    padding: 0 0%; /* 可选：添加内边距 */
+    text-align: center; /* 文字居中 */
+    width:100%;
+}
+.contact-description{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    width:100%;
+
+}
+.contact-info p,
+.contact-description p{
+    color: #919191;
+    font-size: 16px;
+}
+.contact-info h3,
+.contact-description h3{
+    color: #e2e2e2;
+    font-size: 27px;
+    font-weight:normal; /* 设置为正常粗细 */
+}
+.contact-section2{
+    margin: 1% 15%;
+    
+}
+
+
+.support-section section-header  {
+    border-bottom: none;
+    color: #e2e2e2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logo-slider {
+    overflow-x: none;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: scroll 3s linear infinite; /* 设置动画持续时间为20秒，线性滚动，无限循环 */
+    
+}
+
+.logo-slider img {
+    width: 100%;
+    height: 10vh;
+    margin-right: 5%;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .logo-slider img {
+    width: 84%;
+    height: 6.4vh;
+    margin-right: 2.5%;
+    border-radius: 5px;
+}
+}  
+.privacy-section p {
+    margin-top: 5%;
+    color: #919191;
+    font-size: 1em;
+}
+
+.copyright-section {
+    padding: 5%;
+    background-color: black;
+    color: #919191;
+}
